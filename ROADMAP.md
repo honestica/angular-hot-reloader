@@ -21,3 +21,4 @@
 - [ ] Make mention in `README.md` "Use this only in `dev`"
 - [ ] Create examples
 - [ ] Create screencast
+- [ ] Support controller-less template in `template loader`
