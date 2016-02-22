@@ -1,0 +1,23 @@
+{
+  "name": "angular-hot-reloader",
+  "version": "0.0.1",
+  "description": "Hot reloading template, services, and controller for Angular 1.X",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/honestica/angular-hot-reloader.git"
+  },
+  "keywords": [
+    "angular",
+    "hot-reload"
+  ],
+  "author": "Honestica",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/honestica/angular-hot-reloader/issues"
+  },
+  "homepage": "https://github.com/honestica/angular-hot-reloader#readme"
+}
