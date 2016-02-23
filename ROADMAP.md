@@ -1,7 +1,7 @@
 ### Roadmap
 
 * 26/02 -> Project initialized with as much fix as possible
-* 02/03 -> Blog post written
+* 02/03 -> Blog post written + TodoMvC examples
 * 04/03 -> Package published :metal:
 
 ### To fix
