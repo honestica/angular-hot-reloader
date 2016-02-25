@@ -15,7 +15,7 @@
     "hot-reload"
   ],
   "author": "Honestica",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/honestica/angular-hot-reloader/issues"
   },
