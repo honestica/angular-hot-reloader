@@ -1,5 +1,5 @@
 # angular-hot-reloader
-Hot Reload templates, controller and services in Angular1.X !!
+Hot Reload templates, controller and services in Angular1.X!!
 
 The angular hot reloader is a suite of webpack loaders that enable hot reloading for templates, controller and services in Angular 1.X, leveraging the power of Webpack's Hot Module Reloader, with a minimal contract.
 
@@ -7,7 +7,7 @@ The angular hot reloader is a suite of webpack loaders that enable hot reloading
 For now, it enables hot module reloading for templates, controller methods (except constructors), and services.
 
 ## What do I need to make it work ?
-These loaders were written to work with a project using Webpack, ES6+Babel, Angular 1.X and best practices from @johnpapa and @scottmoss from AngularClass. Needless to say, it was largely inspired by the great work of @danabrahamov.
+These loaders were written to work with a project using Webpack, ES6+Babel, Angular 1.X and best practices from @johnpapa and @scottmoss from AngularClass. Needless to say, it was largely inspired by the great work of @danabramov.
 
 The main requirements are :
   - One file, one **ES6** module, one purpose.
@@ -19,12 +19,12 @@ If your code respects the minimal contract, you just need to npm install this pr
 
 ```javascript
   preLoader: [
-    { test: /\.js$/, loader: 'component-hotloader!service-hot-loader', exclude: [/client\/lib/, /node_modules/, /\.spec\.js/] }
+    { test: /\.js$/, loader: 'component-hotloader!service-hotloader', exclude: [/client\/lib/, /node_modules/, /\.spec\.js/] }
   ],
   postLoader: [
-    { test: /\.jade$/, loader: 'template-hot-loader' }
+    { test: /\.jade$/, loader: 'template-hotloader' }
     // or html, if you're using html
-    { test: /\.jade$/, loader: 'template-hot-loader' }
+    { test: /\.html$/, loader: 'template-hotloader' }
   ]
 ```
 And ... you're done. You can add or remove html in your templates, add scope bindings, change controller methods, change service methods (currently only supports Services and not factories)
