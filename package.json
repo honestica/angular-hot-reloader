@@ -2,7 +2,7 @@
   "name": "angular-hot-reloader",
   "version": "0.0.1",
   "description": "Hot reloading template, services, and controller for Angular 1.X",
-  "main": "index.js",
+  "main": "loaders/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/honestica/angular-hot-reloader/issues"
   },
-  "homepage": "https://github.com/honestica/angular-hot-reloader#readme"
+  "homepage": "https://github.com/honestica/angular-hot-reloader#readme",
+  "dependencies": {
+    "lodash.camelcase": "^4.1.0",
+    "lodash.capitalize": "^4.1.1",
+    "lodash.kebabcase": "^4.0.0"
+  }
 }
