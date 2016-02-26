@@ -6,13 +6,13 @@
 
 ### To fix
 ##### Blocker
-- [ ] Expose loader in one module
-- [ ] Do no require `angular` to be in `window`
+- [x] Expose loader in one module
 
 ##### Nice to have
+- [ ] Update doc with single loader (-> name convention)
 - [ ] Clean old compiled `template` in `template loader`
 - [ ] Write injected code in ES5
-- [ ] Write loader in ES5
+- [ ] Transpile loader in ES5
 - [ ] Find a way to test the loader
 - [ ] Check is we have to use `vm` in `controller loader` or if there is a more generic way.
 - [ ] Clean deleted method in `prototype` (service and component loaders)
