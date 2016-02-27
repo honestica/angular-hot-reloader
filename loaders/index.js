@@ -26,5 +26,5 @@ export default function (input) {
     return input;
   }
   
-  return input + candidate[0].fn(name);
+  return input + candidate[0].fn(directoryName);
 }
