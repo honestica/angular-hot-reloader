@@ -14,7 +14,7 @@
 - [ ] Write injected code in ES5
 - [ ] Transpile loader in ES5
 - [ ] Find a way to test the loader
-- [ ] Check is we have to use `vm` in `controller loader` or if there is a more generic way.
+- [ ] Check if we have to use `vm` in `controller loader` or if there is a more generic way.
 - [ ] Clean deleted method in `prototype` (service and component loaders)
 - [ ] Make it configurable
 - [ ] Make it easy to setup
