@@ -1,11 +1,11 @@
 
 class TodoFooterController {
   /**
-   * @param {TodoList} todoList
+   * @param {TodoList} TodoList
    */
-  constructor(todoList) {
+  constructor(TodoList) {
     "ngInject";
-    this.todos = todoList;
+    this.todos = TodoList;
   }
 
   clearCompleted() {

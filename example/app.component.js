@@ -1,13 +1,13 @@
 import './app.less';
 import template from './app.html';
 
-export class TodoAppController {
+export class AppController {
   /**
-   * @param {TodoList} todoList
+   * @param {TodoList} TodoList
    */
-  constructor(todoList) {
+  constructor(TodoList) {
     "ngInject";
-    this.todos = todoList;
+    this.todos = TodoList;
   }
 
   onSave(task) {
@@ -37,5 +37,5 @@ export class TodoAppController {
 
 export default {
   template,
-  controller: TodoAppController
+  controller: AppController
 };

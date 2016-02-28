@@ -1,5 +1,5 @@
 
-export class BatchTogglerController {
+export class TodoBatchToggleController {
 
   /**
    * This hack is needed due angular doesn't have one-way bindings (atleast for now)
@@ -32,6 +32,6 @@ export default {
            ng-change="vm.onToggle()" />
     <label for="toggle-all">Mark all as complete</label>
   `,
-  controller: BatchTogglerController,
+  controller: TodoBatchToggleController,
   controllerAs: 'vm'
 }

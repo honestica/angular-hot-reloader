@@ -1,5 +1,5 @@
 
-class TodoListFilter {
+class TodoListFilterController {
   filter(state) {
     this.onFilter({state});
   }
@@ -17,6 +17,6 @@ export default {
       <li><a href ng-class="{selected: vm.filterState == 'completed'}" ng-click="vm.filter('completed')">Completed</a></li>
     </ul>
   `,
-  controller: TodoListFilter,
+  controller: TodoListFilterController,
   controllerAs: 'vm'
 }
