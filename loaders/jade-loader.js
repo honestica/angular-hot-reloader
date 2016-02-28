@@ -1,15 +1,17 @@
 'use strict';
 
-import camelCase from 'lodash.camelcase';
-import kebabCase from 'lodash.kebabcase';
+const path = require('path');
+const lodash = require('lodash');
 
-export default function (name) {
-  const directiveName = camelCase(name);
-  const tagName = kebabCase(name);
+module.exports = function (input) {
+  this.cacheable();
+  const fileName = path.basename(this.resourcePath,  '.html');
+  const tagName = lodash.kebabCase(fileName);
+  const directiveName = lodash.camelCase(fileName);
 
-  return `
+  return input + `
     if (module.hot) {
-      module.hot.accept();
+      module.hot.accept(console.log.bind(console));
       const newTpl = module.exports;
       const doc = angular.element(document);
       const injector = doc.injector();
@@ -23,7 +25,7 @@ export default function (name) {
           elems.forEach(elt => {
             const angularElement = angular.element(elt);
             const scope = angularElement.isolateScope();
-            angularElement.html(newTpl());
+            angularElement.html(newTpl);
             $compile(angularElement.contents())(scope);
           });
         }

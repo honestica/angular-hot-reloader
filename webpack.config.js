@@ -10,18 +10,22 @@ var argv = require('yargs').argv;
 // Copy common webpack config
 var standardWebpackConf = require('./webpack.common.config.js');
 var webpackConf = Object.assign({}, standardWebpackConf);
-// var componentHot = require.resolve('./loaders/component-loader');
-// var serviceHot = require.resolve('./loaders/service-loader');
-// var jadeHot = require.resolve('./loaders/jade-loader');
+
+var componentHotLoader = require.resolve('./loaders/component-loader');
+var serviceHotLoader = require.resolve('./loaders/service-loader');
+var jadeHotLoader = require.resolve('./loaders/jade-loader');
 
 
-// // add componentHotLoader and serviceLoader
-// (webpackConf.module.preLoaders = webpackConf.module.preLoaders || []).push(
-//   { test: /\.js$/, loader: `${componentHot}!${serviceHot}`, exclude: [/client\/lib/, /node_modules/, /\.spec\.js/] }
-// );
-// (webpackConf.module.postLoaders = webpackConf.module.postLoaders || []).push(
-//   { test: /\.jade$/, loader: jadeHot }
-// );
+// add componentHotLoader and serviceLoader
+(webpackConf.module.preLoaders = webpackConf.module.preLoaders || []).push(
+  { test: /\.component\.js$/, loader: componentHotLoader, exclude: [/client\/lib/, /node_modules/, /\.spec\.js/] }
+);
+(webpackConf.module.preLoaders = webpackConf.module.preLoaders || []).push(
+  { test: /\.service\.js$/, loader: serviceHotLoader, exclude: [/client\/lib/, /node_modules/, /\.spec\.js/] }
+);
+(webpackConf.module.postLoaders = webpackConf.module.postLoaders || []).push(
+  { test: /\.html/, loader: jadeHotLoader }
+);
 
 webpackConf.devtool = 'eval';
 webpackConf.entry = [

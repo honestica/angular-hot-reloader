@@ -1,14 +1,16 @@
 'use strict';
 
-import camelCase from 'lodash.camelcase';
-import capitalize from 'lodash.capitalize';
+const path = require('path');
+const lodash = require('lodash');
 
-export default function (name) {
-  const classToInject = capitalize(camelCase(name)) + 'Service';
+module.exports = function (input) {
+  this.cacheable();
+  const fileName = path.basename(this.resourcePath, '.service.js');
+  const classToInject = lodash.capitalize(lodash.camelCase(fileName));
 
-  return `
+  return input + `
     if (module.hot) {
-      module.hot.accept();
+      module.hot.accept(console.log.bind(console));
       // get service instance
       const name = ${classToInject}.name;
       const doc = angular.element(document);
