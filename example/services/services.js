@@ -1,9 +1,9 @@
 import angular from 'angular';
 
-import todoList from './todoList';
+import TodoList from './todoList.service';
 
 export default angular
   .module('app.services', [])
   .service({
-    todoList
+    TodoList
   });

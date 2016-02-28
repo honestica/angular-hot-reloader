@@ -1,4 +1,4 @@
-import TodoList from './todoList';
+import TodoList from './todoList.service';
 
 describe('TodoList service', () => {
 
