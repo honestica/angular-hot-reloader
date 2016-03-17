@@ -1,13 +1,14 @@
 'use strict';
 
 const path = require('path');
-const lodash = require('lodash');
+const camelCase = require('lodash.camelcase');
+const capitalize = require('./capitalize');
 
 module.exports = function (input) {
   this.cacheable();
   const fileName = path.basename(this.resourcePath, '.component.js');
-  const controllerName = `${lodash.capitalize(lodash.camelCase(fileName))}Controller`;
-  const directiveName = lodash.camelCase(fileName);
+  const controllerName = `${capitalize(camelCase(fileName))}Controller`;
+  const directiveName = camelCase(fileName);
 
   return input + `
     if (module.hot) {

@@ -11,9 +11,9 @@ var argv = require('yargs').argv;
 var standardWebpackConf = require('./webpack.common.config.js');
 var webpackConf = Object.assign({}, standardWebpackConf);
 
-var componentHotLoader = require.resolve('./loaders/component-loader');
-var serviceHotLoader = require.resolve('./loaders/service-loader');
-var jadeHotLoader = require.resolve('./loaders/jade-loader');
+var componentHotLoader = require.resolve('../loaders/component-loader');
+var serviceHotLoader = require.resolve('../loaders/service-loader');
+var jadeHotLoader = require.resolve('../loaders/jade-loader');
 
 
 // add componentHotLoader and serviceLoader

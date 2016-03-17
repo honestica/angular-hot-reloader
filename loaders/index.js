@@ -1,30 +1,29 @@
 'use strict';
 
-import component from './component-loader';
-import service from './service-loader';
-import jade from './jade-loader';
+var component = require('./component-loader');
+var service = require('./service-loader');
+var jade = require('./jade-loader');
 
-import { basename } from 'path';
+var basename = require('path').basename;
 
-function createLoader(regex, fn) { 
-  return { regex, fn };
+function createLoader(regex, fn) {
+  return { regex: regex, fn: fn };
 }
 
-const loaders = [];
+var loaders = [];
 loaders.push(createLoader(/\.jade/, jade));
-loaders.push(createLoader( /\.controller\.js/, controller));
+loaders.push(createLoader( /\.component\.js/, component));
 loaders.push(createLoader( /\.service\.js/, service));
 
-export default function (input) {
+module.exports = function (input) {
   this.cacheable();
-
-  const directoryName = basename(this.context);
-  const fileName = basename(this.resourcePath);
-  const candidate = loaders.filter(({ regex }) => fileName.match(regex));
+  var directoryName = basename(this.context);
+  var fileName = basename(this.resourcePath);
+  var candidate = loaders.filter(function(data) { return fileName.match(data.regex); });
 
   if (!candidate.length) {
     return input;
   }
-  
+
   return input + candidate[0].fn(directoryName);
 }

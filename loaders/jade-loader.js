@@ -1,13 +1,14 @@
 'use strict';
 
 const path = require('path');
-const lodash = require('lodash');
+const kebabCase = require('lodash.kebabcase');
+const camelCase = require('lodash.camelcase');
 
 module.exports = function (input) {
   this.cacheable();
   const fileName = path.basename(this.resourcePath,  '.html');
-  const tagName = lodash.kebabCase(fileName);
-  const directiveName = lodash.camelCase(fileName);
+  const tagName = kebabCase(fileName);
+  const directiveName = camelCase(fileName);
 
   return input + `
     if (module.hot) {

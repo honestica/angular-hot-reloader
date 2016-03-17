@@ -3,7 +3,7 @@ var nodeModulesPath = path.join(__dirname, 'node_modules');
 // var cssTemplate = require.resolve('./loaders/css-template');
 
 module.exports = {
-  context: path.resolve(__dirname + "/example"),
+  context: path.resolve(__dirname + "/app"),
   output: {
     path: path.join(__dirname, 'static'),
     filename: 'bundle.js',

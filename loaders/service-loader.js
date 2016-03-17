@@ -1,12 +1,13 @@
 'use strict';
 
 const path = require('path');
-const lodash = require('lodash');
+const camelCase = require('lodash.camelcase');
+const capitalize = require('./capitalize');
 
 module.exports = function (input) {
   this.cacheable();
   const fileName = path.basename(this.resourcePath, '.service.js');
-  const classToInject = lodash.capitalize(lodash.camelCase(fileName));
+  const classToInject = capitalize(camelCase(fileName));
 
   return input + `
     if (module.hot) {
