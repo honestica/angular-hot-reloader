@@ -5,9 +5,11 @@ export class AppController {
   /**
    * @param {TodoList} TodoList
    */
-  constructor(TodoList) {
+  constructor(TodoList, $interval) {
     "ngInject";
     this.todos = TodoList;
+    this.count = 0;
+    $interval(() => this.increaseCount(), 1000);
   }
 
   onSave(task) {
@@ -32,6 +34,10 @@ export class AppController {
 
   onToggleAll() {
     this.todos.toggleAll();
+  }
+
+  increaseCount() {
+    this.count += 100;
   }
 }
 

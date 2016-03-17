@@ -3,7 +3,7 @@
     <h1>todos</h1>
     <header class="header-input">
       <todo-text-input
-        placeholder="What needs to get done?"
+        placeholder="What needed to get done?"
         on-save="$ctrl.onSave(task)">
       </todo-text-input>
     </header>
@@ -17,4 +17,10 @@
   <todo-footer ng-if="$ctrl.todos.hasTasks()" todos="$ctrl.todos">
     <todo-list-filter on-filter="$ctrl.onFilter(state)" filter-state="$ctrl.todos.filterState"></todo-list-filter>
   </todo-footer>
+</section>
+<section class="counterapp">
+    <h1>Random Counter</h1>
+    <section>
+      <h4> Angular Stars: {{ $ctrl.count }}</h4>
+    </section>
 </section>
