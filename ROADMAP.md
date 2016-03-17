@@ -6,7 +6,7 @@
 
 ### To fix
 ##### Blocker
-- [x] Expose loader in one module
+- [] Expose loader in one module
 
 ##### Nice to have
 - [ ] Update doc with single loader (-> name convention)
