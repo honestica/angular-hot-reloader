@@ -20,7 +20,6 @@ export default {
       <span class="todo-count">
         {{vm.todos.countPending()}} {{vm.todos.countPending() == 1 ? 'todo' : 'todos'}} left
       </span>
-      <ng-transclude></ng-transclude>
       <button
         class="clear-completed"
         ng-click="vm.clearCompleted()"
