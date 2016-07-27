@@ -15,17 +15,24 @@ The main requirements are :
   - An ES6-component style of writting angular applications
 
 ## How do I make it work ?
-If your code respects the minimal contract, you just need to npm install this project, and add preloaders for controller and services and post loaders for your templates:
+If your code respects the minimal contract, you just need to npm install or fork this project, and add preloaders for controller and services and post loaders for your templates:
 
 ```javascript
-  preLoader: [
-    { test: /\.js$/, loader: 'component-hotloader!service-hotloader', exclude: [/client\/lib/, /node_modules/, /\.spec\.js/] }
-  ],
-  postLoader: [
-    { test: /\.jade$/, loader: 'template-hotloader' }
-    // or html, if you're using html
-    { test: /\.html$/, loader: 'template-hotloader' }
-  ]
+var componentHotLoader = require.resolve('../loaders/component-loader');
+var serviceHotLoader = require.resolve('../loaders/service-loader');
+var jadeHotLoader = require.resolve('../loaders/jade-loader');
+
+
+// add componentHotLoader and serviceLoader
+(webpackConf.module.preLoaders = webpackConf.module.preLoaders || []).push(
+  { test: /\.component\.js$/, loader: componentHotLoader, exclude: [/client\/lib/, /node_modules/, /\.spec\.js/] }
+);
+(webpackConf.module.preLoaders = webpackConf.module.preLoaders || []).push(
+  { test: /\.service\.js$/, loader: serviceHotLoader, exclude: [/client\/lib/, /node_modules/, /\.spec\.js/] }
+);
+(webpackConf.module.postLoaders = webpackConf.module.postLoaders || []).push(
+  { test: /\.html/, loader: jadeHotLoader }
+);
 ```
 And ... you're done. You can add or remove html in your templates, add scope bindings, change controller methods, change service methods (currently only supports Services and not factories)
 
