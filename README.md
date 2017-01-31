@@ -56,5 +56,5 @@ The loaders are just adding a little piece of code to each file that can be hot 
 ## Does it really work ?
 Well our current app uses angular 1.X with es6, so it was written to ease our developement experience and it's been a great addition to our tooling ! It works really good for what we need but there are edge-cases where it doesn't. Feel free to post an issue to pinpoint failing cases
 
-## It's 2016, how about angular2 ?
+## It's 2017, how about angular2 ?
 The methodology applied here could be easily ported to angular2
