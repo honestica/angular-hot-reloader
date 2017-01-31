@@ -1,10 +1,11 @@
 "use strict";
-import template from './counter.html';
+const template = require('./counter.html');
 
 class CounterController {
   /**
    * @param {TodoList} TodoList
    */
+  count: number;
   constructor($interval) {
     "ngInject";
     this.count = 0;

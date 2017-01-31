@@ -1,5 +1,8 @@
 
 export class TodoItemController {
+  TodoList: any;
+  isEditing: boolean;
+  task: any;
   constructor(TodoList) {
     "ngInject";
     this.TodoList = TodoList;
