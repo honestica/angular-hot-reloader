@@ -1,6 +1,6 @@
 {
   "name": "angular-hot-reloader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hot reloading template, services, and controller for Angular 1.X",
   "main": "loaders/index.js",
   "scripts": {
