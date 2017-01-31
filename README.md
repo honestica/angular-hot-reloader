@@ -5,6 +5,7 @@ The angular hot reloader is a suite of webpack loaders that enable hot reloading
 
 ## What does it do ?
 For now, it enables hot module reloading for templates, controller methods (except constructors), and services.
+NEW: Update with an typescript example !
 
 ## What do I need to make it work ?
 These loaders were written to work with a project using Webpack, ES6+Babel, Angular 1.X and best practices from @johnpapa and @scottmoss from AngularClass. Needless to say, it was largely inspired by the great work of @danabramov.
